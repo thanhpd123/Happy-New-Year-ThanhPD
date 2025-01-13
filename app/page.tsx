@@ -54,6 +54,7 @@ export default function Home() {
               width={200}
               height={200}
               className="picture"
+              loading="lazy"
             />
             <p className="click-text">Nhấp vào đây</p>
           </div>
@@ -64,6 +65,7 @@ export default function Home() {
             width={200}
             height={200}
             className="gift"
+            loading="lazy"
           />
         )}
       </div>
