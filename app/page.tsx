@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 import Image from 'next/image';
 
+
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showGift, setShowGift] = useState(false);
