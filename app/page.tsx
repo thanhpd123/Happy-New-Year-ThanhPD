@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div>
-      <audio ref={audioRef} src="/music/HPNY.mp3" />
+      <audio ref={audioRef} src="https://happy-new-year-thanh-pd.vercel.app/music/HPNY.mp3" />
       <h1 className="text-center flex items-center justify-center gap-2">
         <span className="emoji">🎉</span>
         <span className="new-year-text">Happy New Year!</span>
@@ -50,7 +50,7 @@ export default function Home() {
         {!showGift ? (
           <div onClick={handlePictureClick} className="picture-container">
             <Image
-              src="/pictures/pic1.jpg"
+              src="https://happy-new-year-thanh-pd.vercel.app/pictures/pic1.jpg"
               alt="Picture"
               width={200}
               height={200}
@@ -60,11 +60,12 @@ export default function Home() {
           </div>
         ) : (
           <Image
-            src="/pictures/banh.gif"
+            src="https://happy-new-year-thanh-pd.vercel.app/pictures/banh.gif"
             alt="Gift"
             width={200}
             height={200}
             className="gift"
+            unoptimized
           />
         )}
       </div>
