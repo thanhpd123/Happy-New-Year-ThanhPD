@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Lời chúc năm mới 2025 của Thành-dz =))",
     images: [
       {
-        url: "/pictures/icon1.png",
+        url: "/pictures/pic2.jpg",
       },
     ],
   },
