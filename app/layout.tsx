@@ -16,6 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Việt Nam - Vô Địch",
   description: "Lời chúc năm mới 2025 của Thành-dz =))",
+  openGraph: {
+    title: "Việt Nam - Vô Địch",
+    description: "Lời chúc năm mới 2025 của Thành-dz =))",
+    images: [
+      {
+        url: "/pictures/icon1.png",
+      },
+    ],
+  },
+  icons: {
+    icon: "/pictures/icon2.png",
+  },
 };
 
 export default function RootLayout({
