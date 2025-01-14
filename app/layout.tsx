@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Việt Nam - Vô Địch",
   description: "Lời chúc năm mới 2025 của Thành-dz =))",
+  openGraph: {
+    title: "Việt Nam - Vô Địch",
+    description: "Lời chúc năm mới 2025 của Thành-dz =))",
+    images: [
+      {
+        url: "/pictures/icon1.png",
+      },
+    ],
+  },
+  icons: {
+    icon: "/pictures/icon2.png",
+  },
 };
 
 export default function RootLayout({
@@ -26,13 +37,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/pictures/icon2.png" type="image/png" />
-        <meta property="og:title" content={(metadata.title as string) || "Việt Nam - Vô Địch"} />
-        <meta property="og:description" content={metadata.description || "Lời chúc năm mới 2025 của Thành-dz =))"} />
-        <meta property="og:image" content="/pictures/icon1.png" />
-        <meta property="og:url" content="https://happy-new-year-thanh-pd.vercel.app/" />
-      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
