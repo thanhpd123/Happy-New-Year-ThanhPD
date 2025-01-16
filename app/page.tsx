@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 import Image from 'next/image';
 
-
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showGift, setShowGift] = useState(false);
@@ -23,15 +22,23 @@ export default function Home() {
       });
     }, 250);
 
-    if (audioRef.current) {
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+    }, 30000);
+
+    const currentAudioRef = audioRef.current;
+    if (currentAudioRef) {
       const playAudio = () => {
-        audioRef.current?.play();
+        currentAudioRef.play();
       };
       window.addEventListener('click', playAudio, { once: true });
     }
 
-    return () => clearInterval(interval);
-    window.removeEventListener('click', () => audioRef.current?.play());
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+      window.removeEventListener('click', () => currentAudioRef?.play());
+    };
   }, []);
 
   const handlePictureClick = () => {

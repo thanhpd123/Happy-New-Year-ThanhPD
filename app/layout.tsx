@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Việt Nam - Vô Địch",
-  description: "Lời chúc năm mới 2025 của Thành-dz =))",
+  title: "Quà-Của-Bảnh",
+  description: "Lời chúc năm mới 2025 của Thành-CR7 =))",
   openGraph: {
-    title: "Việt Nam - Vô Địch",
-    description: "Lời chúc năm mới 2025 của Thành-dz =))",
+    title: "Quà-Của-Bảnh",
+    description: "Lời chúc năm mới 2025 của Thành-CR7 =))",
     images: [
       {
         url: "/pictures/pic2.jpg",
