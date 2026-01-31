@@ -68,7 +68,7 @@ export default function Home() {
           </div>
         ) : (
           <video
-            src="/pictures/banh.mp4"
+            src="/pictures/dance2.mp4"
             autoPlay
             loop
             muted
