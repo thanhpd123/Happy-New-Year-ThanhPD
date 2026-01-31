@@ -66,13 +66,15 @@ export default function Home() {
             <p className="click-text">Nhấp vào đây</p>
           </div>
         ) : (
-          <Image
-            src="/pictures/banh.gif"
-            alt="Gift"
+          <video
+            src="/pictures/banh.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="gift"
             width={200}
             height={200}
-            className="gift"
-            unoptimized
           />
         )}
       </div>
