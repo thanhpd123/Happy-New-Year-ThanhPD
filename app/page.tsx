@@ -7,9 +7,26 @@ import Image from 'next/image';
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showGift, setShowGift] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const handlePictureClick = () => {
+    setShowGift(true);
+
+    // Phát nhạc
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+
+    // Bắn pháo hoa
+    intervalRef.current = setInterval(() => {
       const particleCount = 50;
       confetti({
         particleCount,
@@ -22,27 +39,11 @@ export default function Home() {
       });
     }, 250);
 
-    const timeout = setTimeout(() => {
-      clearInterval(interval);
+    timeoutRef.current = setTimeout(() => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     }, 30000);
-
-    const currentAudioRef = audioRef.current;
-    if (currentAudioRef) {
-      const playAudio = () => {
-        currentAudioRef.play();
-      };
-      window.addEventListener('click', playAudio, { once: true });
-    }
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
-      window.removeEventListener('click', () => currentAudioRef?.play());
-    };
-  }, []);
-
-  const handlePictureClick = () => {
-    setShowGift(true);
   };
 
   return (
